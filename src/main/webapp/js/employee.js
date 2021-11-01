@@ -30,9 +30,13 @@
 	let formSaveInfoCheckBox;
 	let formInfoSubmit;
 	
-	
-	//new request form
+	//New request Form
 	document.getElementById('newRequestForm').addEventListener('submit', submitNewRequest);
+	let requestTypeSelect;
+	let amountBox;
+	let descriptionBox;
+	let newRequestCheckbox;
+	
 	
 	
 
@@ -54,6 +58,13 @@
 	formEmailBox = document.getElementById('email');
 	formSaveInfoCheckBox = document.getElementById('editCheckButton');
 	formInfoSubmit = document.getElementById('empInfoSubmit');
+
+
+	//new request form
+	requestTypeSelect = document.getElementById('typeSelect');
+	amountBox = document.getElementById('newRequestAmount');
+	descriptionBox = document.getElementById('newRequestDescription');
+	newRequestCheckbox = document.getElementById('confirmNewRequestCheckbox');
 
 
 
@@ -257,10 +268,9 @@ async function submitNewRequest(e){
 	
 	let url = "http://localhost:8080/ERS/api/submitNewRequest";
 	let id = user.id;
-	let amount = document.getElementById('newRequestAmount').value; 
-	let description = document.getElementById('newRequestDescription').value; 
-	let typeId = document.getElementById('typeSelect').value;
-
+	let amount = amountBox.value; 
+	let description = descriptionBox.value; 
+	let typeId = requestTypeSelect.value;
 
 	let newInfo = {
 			id,
@@ -269,8 +279,14 @@ async function submitNewRequest(e){
 			typeId,
 		};
 		
-		console.log("attempting submit new request: " + newInfo);
-		hideModal(newRequestModal);
+	//clear controls
+	newRequestCheckbox.checked = false;
+	amountBox.value = "";
+	descriptionBox.value = "";
+	requestTypeSelect.value = "";
+		
+	console.log("attempting submit new request: " + newInfo);
+	hideModal(newRequestModal);
 		
 	try{
 		let req = await fetch(url, {

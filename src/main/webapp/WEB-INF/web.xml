@@ -13,42 +13,6 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	<servlet>
-		<servlet-name>SimpleTextServlet</servlet-name>
-		<servlet-class>com.revature.servlet.TextServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SimpleTextServlet</servlet-name>
-		<url-pattern>/text</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>com.revature.servlet.LoginServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>LoginServlet</servlet-name>
-		<url-pattern>/login</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>RegisterServlet</servlet-name>
-		<servlet-class>com.revature.servlet.RegisterServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>RegisterServlet</servlet-name>
-		<url-pattern>/register</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>EmployeeServlet</servlet-name>
-		<servlet-class>com.revature.servlet.EmployeeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>EmployeeServlet</servlet-name>
-		<url-pattern>/employee</url-pattern>
-	</servlet-mapping>
-
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error</location>
