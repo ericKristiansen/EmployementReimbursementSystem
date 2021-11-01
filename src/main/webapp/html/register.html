@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+
+  <link href="../css/register.css" rel="stylesheet" />
+
+  <link href="../site.css" rel="stylesheet" />
+
+  <title>Register Page</title>
+</head>
+
+<body>
+  <div id="banner">
+  	<span class="appTitleBasic">Employee Reimbursement System</span>
+  </div>
+
+  <div id="content">
+  
+    <div id="pageTitleDiv">
+      <h1 id="titleBold">Register</h1>
+    </div>
+
+    <div id="formContainer">
+    <form id="registerForm">
+    
+        <div class="form-floating mb-3">
+			<input type="text" class="form-control" name="firstName" autocomplete="off" id="firstNameTextbox" required>
+        	<label for="floatingInput">First Name</label>
+      	</div>
+    
+      	<div class="form-floating mb-3">
+			<input type="text" class="form-control" name="lastName" autocomplete="off" id="lastNameTextbox" required>
+        	<label for="floatingInput">Last Name</label>
+      	</div>
+ 
+       	<div class="form-floating mb-3">
+			<input type="text" class="form-control" name="username" autocomplete="off" id="usernameTextbox" required>
+        	<label for="floatingInput">Username</label>
+      	</div>
+    
+        <div class="form-floating mb-3">
+			<input type="password" class="form-control" name="password" id="passwordTextbox" required>
+        	<label for="floatingInput">Password</label>
+      	</div>
+      	
+        <div class="form-floating mb-3">
+			<input type="email" class="form-control" name="email" autocomplete="off" id="emailTextbox" required>
+        	<label for="floatingInput">Email</label>
+      	</div>
+      
+		<div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+  			<input class="form-check-input" type="checkbox" required value="" name="confirmCheckbox" id="confirmCheckbox">
+  			<label class="form-check-label" for="confirmCheckbox">&nbsp Data is Correct</label>
+		</div>
+      
+      <div class="form-floating" id="submitDiv">
+        <input type="submit" value="Register" id="submitButton" class="form-control">
+      </div>
+    </form>
+  </div>
+
+  </div>
+  
+  
+  
+  <!-- The Modal -->
+
+
+<div id="noticeModal" style="display: none;" class="modal-content">
+  <div id="modalHeader" class="modal-header">
+
+    <h2 id="noticeHeader">You're on Notice</h2>
+  </div>
+  <div class="modal-body" id="noticeDetailDiv">
+  </div>
+  <div id="modalFooter" class="modal-footer">
+        <button type="button" onclick="refresh()" class="btn btn-primary">Register Again</button>
+        <button type="button" onclick="goToLogin()" class="btn btn-success">Go To Login</button>
+  </div>
+</div> 
+
+
+  <!-- Modal -->
+  
+
+  <script src="../js/register.js"></script>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

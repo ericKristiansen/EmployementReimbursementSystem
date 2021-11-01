@@ -1,0 +1,76 @@
+
+
+#loginDiv{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#submitButton{
+    background-color: blue;
+    font-size: 1.5em;
+    color: white;
+}
+
+#confirmCheckbox{
+	background-color: gray;
+}
+
+
+#submitDiv{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2%;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#loginbold{
+    font-weight: bold;
+    font-size: 2em; 
+}
+
+#formContainer{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+p{text-align: center; font-size: 2em;}
+
+ 
+ /* Modal Content - hacked from w3schools example */
+.modal-header {
+  padding: 2px 16px;
+  background-color: blue;
+  color: black;
+}
+
+.modal-body { padding: 2px 16px; }
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: blue;
+  color: black;
+}
+
+.modal-content {
+  position: relative;
+  background-color: lightgray;
+  margin: auto;
+  margin-top: -100px;
+  padding: 0;
+  border: 1px solid black;
+  width: 80%;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+} 

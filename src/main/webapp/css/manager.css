@@ -1,0 +1,38 @@
+
+
+#logindiv{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#submitbutton{
+    background-color: lightgray;
+    border-radius: 5%;
+    font-size: 1.5em;
+}
+
+#submitdiv{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2%;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#loginbold{
+    font-weight: bold;
+    font-size: 2em; 
+}
+
+.pageModalMargin{
+	margin-bottom: 125px;
+	margin-top: 125px;
+}
+
+
+.formContainer{
+	width: 40%;
+	margin: 0 auto;
+}

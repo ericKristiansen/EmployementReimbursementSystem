@@ -1,0 +1,114 @@
+
+#dropdownMenu{
+	background-color: black;
+}
+
+li, li a, #dropdownMenu, #empInfoAction, #logoutAction
+{
+	font-size: 1em;
+	font-weight: bolder;
+	color: white;	
+}
+
+li, li a, #dropdownMenu, #empInfoAction:hover, #logoutAction:hover
+{
+	font-size: 1em;
+	font-weight: bolder;
+	color: black;	
+}
+
+#employeeInfoList{
+    margin-top: 2%;
+}
+
+
+#pageTitleDiv{
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 2%;
+}
+
+#titleBold{
+	width: fit-content;
+	block-size: fit-content;
+	margin: 0 auto;
+    font-weight: bold;
+    font-size: 2em; 
+}
+
+#content{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.buttonContainer{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.buttonSpace{
+	margin: 4% 0;
+}
+
+#banner{
+    height: 125px;
+    background-color: black;
+    text-align: center;
+}
+
+.appTitleWithDropDown{
+	color: white;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-right: -200px;
+	font-size: 2.5em;
+    font-weight: bolder;
+    float: clear;
+}
+
+.appTitleBasic{
+	color: white;
+	margin: 0 auto;
+	margin-top: 5%;
+	font-size: 2.5em;
+    font-weight: bolder;
+}
+
+#userInfoLink{
+	color: white;	
+	text-decoration: none;
+}
+
+#userInfoLinkDiv{
+	text-align: left;
+	margin-top: 10px;
+	color: white;
+	float: right;
+	font-size: 1em;
+	height: 10px;
+	width: 200px;
+}
+
+.btn{
+	width: 200px;
+	height: 40px;
+}
+
+
+#indexContainer{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 10%;
+}
+
+#homeDiv{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#homeBold{
+    font-weight: bold;
+    font-size: 2em;
+}

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous" />
+
+<link href="../css/manager.css" rel="stylesheet" />
+
+<link href="../site.css" rel="stylesheet"/>
+
+<title>Employee Home</title>
+</head>
+
+<body>
+
+	<div id="banner">
+		<span onclick="window.location.href = '..'"
+			class="appTitleWithDropDown">Employee Reimbursement System</span>
+		<div id="userInfoLinkDiv">
+			<ul class="nav nav-pills">
+				<li id="employeeNameElement" class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"><span id='userNameSpan'>User
+							Name</span></a>
+					<ul id="dropdownMenu" class="dropdown-menu">
+						<li><h6>
+								<a id="empInfoAction" onclick="empInfoAction();"
+									class="dropdown-item" href="#">My Info</a>
+							</h6></li>
+						<li><h6>
+								<a id="logoutAction" onclick="logoutAction();"
+									class="dropdown-item" href="#">Logout</a>
+							</h6></li>
+					</ul></li>
+			</ul>
+		</div>
+	</div>
+	<!-- End banner div -->
+
+    <div id="pageTitleDiv">
+      <h1 id="titleBold">Manager Home</h1>
+    </div>
+
+
+	<div id="content">
+
+		<div id="reimbContainerDiv">
+			<div id="reimbHeaderDiv">
+				<header>
+					<h2>
+						<span id="headerSpan">All Employee Reimbursement Requests</span>
+					</h2>
+				</header>
+			</div>
+			<div>
+				<div class="reimbList">
+					<div class="search-container">
+						<!--------------------- Controls ---------------------->
+						<div id="controlGroup" class="btn-group" role="group"
+							aria-label="Basic radio toggle button group">
+
+							<input type="radio" class="btn-check" name="btnradio"
+								id="buttonAllRequests" onClick="getAllRequests();" autocomplete="off" checked> <label
+								class="btn btn-outline-primary" for="buttonAllRequests">All
+								Requests</label> <input type="radio" onClick="getRequestsByStatusId(1);" class="btn-check" name="btnradio"
+								id="buttonPendingRequests" autocomplete="off"> <label
+								class="btn btn-outline-primary" for="buttonPendingRequests">Pending
+								Requests</label> <input type="radio" onClick="getRequestsByStatusId(2);" class="btn-check" name="btnradio"
+								id="buttonResolvedRequests" autocomplete="off"> <label
+								class="btn btn-outline-primary" for="buttonResolvedRequests">Approved
+								Requests</label>
+
+						</div>
+						<div id="byEmployeeDiv" style="float: right;">
+							<button id="byEmployeeButton"
+								onclick="byEmployeeAction();" type="button"
+								class="btn btn-primary">Request By Employee</button>
+						</div>
+					</div>
+					<!--------------------- End Controls ---------------------->
+					
+					
+					<table class="table table-hover table-dark">
+  						<thead>
+    						<tr>
+    							<th scope="col">Emp Number</th>
+      							<th scope="col">Rqst Number</th>
+      							<th scope="col">Type</th>
+      							<th scope="col">Amount</th>
+      							<th scope="col">Description</th>
+      							<th scope="col">Status</th>
+      							<th scope="col">Approve/Deny</th>
+    						</tr>
+  						</thead>
+  					<tbody id="requestTableBody">
+
+  					</tbody>
+				</table>
+							
+
+
+					</div>
+				</div>
+			</div>
+	</div> <!--End content id div-->
+
+
+	<!--------------------- Modal Employee Info ----------------------->
+
+
+	<div id="empInfoModal" class="modal pageModalMargin"
+		Style="display: none;">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span style="cursor: pointer;" onclick="hideModal(empInfoModal)"
+				class="close">&times;</span>
+			<div>
+				<div style="margin-left: 60%;" class="btn-group" role="group"
+					aria-label="Basic checkbox toggle button group">
+					<input type="checkbox" onchange="checkboxChange();"
+						class="btn-check" id="editCheckButton" autocomplete="off">
+					<label id="editInfoLabel" class="btn btn-outline-primary"
+						for="editCheckButton">Edit My Info</label>
+				</div>
+			</div>
+			<div id="empFormContainer">
+				<form id="empInfoForm">
+					<div class="mb-3">
+						<div class="mb-3">
+							<label for="empNumber" class="form-label">Employee Number</label>
+							<input type="text" class="form-control text-white bg-secondary"
+								id="empNumber" required disabled>
+						</div>
+						<label for="firstName" class="form-label">First Name</label> <input
+							type="text" class="form-control text-white bg-secondary"
+							id="firstName" autocomplete="off" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="lastName" class="form-label">Last Name</label> <input
+							type="text" class="form-control text-white bg-secondary"
+							id="lastName" autocomplete="off" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="username" class="form-label">User Name</label> <input
+							type="text" class="form-control text-white bg-secondary"
+							id="username" autocomplete="off" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label> <input
+							type="password" class="form-control text-white bg-secondary"
+							id="password" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="email" class="form-label">Email address</label> <input
+							type="email" class="form-control text-white bg-secondary"
+							id="email" aria-describedby="emailHelp" autocomplete="off" required>
+						<div id="emailHelp" class="form-text">We'll never share your
+							email with anyone else.</div>
+					</div>
+
+					<div class="mb-3 form-check">
+						<input type="checkbox" class="form-check-input"
+							id="confirmCheckbox" required> <label
+							class="form-check-label" for="confirmCheckbox">The
+							information is correct</label>
+					</div>
+
+					<div>
+						<button type="submit" id="empInfoSubmit" style="float: left;"
+							class="btn btn-primary">Submit</button>
+						<button type="button" onclick="hideModal(empInfoModal)"
+							class="btn btn-secondary btn-sm">Close</button>
+					</div>
+				</form>
+				</br> </br> </br>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!--------------------- End Modal Employee Info ----------------------->
+
+	<!--------------------- Employee List Modal ----------------------->
+
+
+	<div id="employeeListModal" class="modal pageModalMargin"
+		Style="display: none;">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span style="cursor: pointer;" onclick="hideModal(employeeListModal)"
+				class="close">&times;</span>
+
+			<div id="employeeListFormContainer" class="formContainer">
+				<form id="employeeListForm">
+				
+				<div style="text-align: center; margin-bottom: 25px;"><h2>EMPLOYEE LIST</h2></div>
+
+
+
+					<table class="table table-hover table-dark">
+  						<thead>
+    						<tr>
+    							<th scope="col">Emp Number</th>
+      							<th scope="col">Name</th>
+      							<th scope="col">Username</th>
+    						</tr>
+  						</thead>
+  					<tbody id="employeeTableBody">
+
+  					</tbody>
+				</table>
+
+					<div>
+						<button type="button" onclick="hideModal(employeeListModal);"
+							class="btn btn-secondary btn-sm" style="float: right;">Close</button>
+					</div>
+
+				</form>
+				</br> </br> </br> </br> </br> </br> </br> </br>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!--------------------- End Employee List Modal ----------------------->
+	
+	
+		<!--------------------- Employee Request Modal ----------------------->
+
+
+	<div id="empRequestModal" class="modal pageModalMargin"
+		Style="display: none;">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span style="cursor: pointer;" onclick="refresh();"
+				class="close">&times;</span>
+
+			<div id="employeeRequestFormContainer" style="height: 800px;" class="formContainer">
+				<form id="employeeRequestForm">
+				
+				<div style="text-align: center; margin-bottom: 25px;"><h2>EMPLOYEE REQUEST</h2></div>
+
+
+					
+					<table class="table table-hover table-dark">
+  						<thead>
+    						<tr>
+    							<th scope="col">Emp Name</th>
+      							<th scope="col">Rqst Number</th>
+      							<th scope="col">Type</th>
+      							<th scope="col">Amount</th>
+      							<th scope="col">Description</th>
+      							<th scope="col">Status</th>
+      							<th scope="col">Approve Deny</th>
+    						</tr>
+  						</thead>
+  					<tbody id="employeeRequestTableBody">
+
+  					</tbody>
+				</table>
+
+					<div>
+						<button type="button" onclick="refresh();"
+							class="btn btn-secondary btn-sm" style="float: right;">Close</button>
+					</div>
+
+
+				</form>
+				</br> </br> </br> </br> </br> </br> </br> </br>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!--------------------- End Employee Request Modal ----------------------->
+	
+
+
+
+	<!-- Notice Modal -->
+
+
+	<div id="noticeModal" style="display: none;" class="modal-content">
+		<div id="modalHeader" class="modal-header">
+
+			<h2 id="noticeHeader">You're on Notice</h2>
+		</div>
+		<div class="modal-body" id="noticeDetailDiv"></div>
+		<div id="modalFooter" class="modal-footer">
+			<button type="button" onclick="refresh();" class="btn btn-primary">Try
+				Again</button>
+			<button type="button" onclick="logoutAction();"
+				class="btn btn-success">Go To Login</button>
+		</div>
+	</div>
+
+
+	<!-- End NoticeModal -->
+
+
+	<!----------------------------------- Add Scripts Below --------------------------------------->
+
+	<script src="../js/manager.js"></script>
+
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+
+/* --------------- named element style ---------------------------- */
+
+
+#reimbTable{
+	width: 100%;
+	float: clear;
+}
+
+.pageModalMargin{
+	margin-bottom: 125px;
+	margin-top: 125px;
+}
+
+#modal-content{
+	width: 80%;
+	margin: 10% auto;
+}
+
+#empFormContainer{
+
+	width: 40%;
+	margin: 0 auto;
+}
+
+.formContainer{
+	width: 40%;
+	margin: 0 auto;
+}
+
+#newRequestFormContainer{
+	padding-top: 200px;
+}
+
+.list-container{ padding-top: 5%;}
+
+#reimbContainerDiv{
+	width: 90%;
+}
+
+#controlGroup{ float: left; }
+
+#newReimbDiv{
+	float: right;
+}
+
+#employeeDisplayDiv{
+    word-wrap: break-word;
+}
+
+#newReimbButton{
+	float: right;
+}
+
+#controlGroup{
+	float: left;
+}
+
+#submitdiv{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2%;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#loginbold{
+    font-weight: bold;
+    font-size: 2em; 
+}
+
+
+/* --------------- classed element style ---------------------------- */
+.fr{ float: right;}
+
+.displayDiv{
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.rowContainer{
+    height: 500px;
+    margin-top: 5%;
+    overflow-y: scroll;
+}
+
+.sectionTitle{
+    width: 100%;
+    text-align: center;
+}
+
+/* --------------- tagged element style ---------------------------- */
+
+table{border: none;}
+
+h6{font-size: .8em;}
+
+
+p{text-align: center; font-size: 2em;}
+
+ 
+ /* Modal Content - hacked from w3schools example */
+.modal-header {
+  padding: 2px 16px;
+  background-color: blue;
+  color: black;
+}
+
+.modal-body { padding: 2px 16px; }
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: blue;
+  color: black;
+}
+
+#modalContent {
+  position: relative;
+  background-color: lightgray;
+  margin: auto;
+  margin-top: -100px;
+  padding: 0;
+  border: 1px solid black;
+  width: 80%;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+} 
