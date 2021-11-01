@@ -1,6 +1,5 @@
 package com.revature.dao.reimbursement;
 
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,10 +8,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import com.revature.dao.user.USER;
 import com.revature.models.Reimbursement;
-import com.revature.models.User;
 import com.revature.utils.ConnectionUtil;
 
 public class ReimbursementDaoDb implements ReimbursementDao{
